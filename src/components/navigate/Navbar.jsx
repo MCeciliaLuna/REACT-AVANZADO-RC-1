@@ -1,8 +1,7 @@
 import { MenuItem } from "./MenuItem";
 import { MenuData } from "../../data/Menu";
-import { Searcher } from "./Searcher";
 
-export const Navbar = () => {
+export const Navbar = ({loggedOnCLick}) => {
   return (
     <nav className="navbar navbar-expand-lg bg-dark">
       <div className="container">
@@ -14,13 +13,15 @@ export const Navbar = () => {
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
-        >
+          >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <MenuItem menuData={MenuData} />
-          <Searcher />
+          <button className="btn btn-primary" type="submit" onClick={loggedOnCLick}>
+            Login
+          </button>
         </div>
       </div>
     </nav>

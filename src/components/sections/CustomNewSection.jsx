@@ -3,7 +3,14 @@ import { CallToActionCards } from "./CallToActionCards";
 import { NewsCards } from "./NewsCards";
 import { Novedades } from "../../data/Novedades";
 
-export const CustomNewSection = () => {
+export const CustomNewSection = ({isLogged}) => {
+  if(isLogged === false){
+    return(
+      <div className="alert alert-danger text-center fs-5 fw-bold" role="alert">
+  ⚠️ No estás logueado, no puedes acceder ⚠️
+</div>
+    )
+  }
   return (
     <div
       className="px-4 py-5 "
